@@ -1,0 +1,37 @@
+<rule>
+	<!--存在时十六进制字符,逗号分隔为空，如：0x23,0x23;不存在是为空-->
+	<head>0x23,0x23</head>
+	<!--存在时十六进制字符,逗号分隔为空;不存在是为空-->
+	<tail>0x24</tail>
+	<!--转义规则-->
+	<escapeChar>
+		<!--src:原,dest:目标,十六进制字符,多个字符是用逗号分隔-->
+		<item src="0x23,0x23" dest="0xff,0xfe" />
+		<item src="0x24" dest="0xff,0xfd" />
+	</escapeChar>
+	<!--包体长度字段,exists:true/false,是否存在;datatype:byte/uint16;start:起始位置-->
+	<bodySize exists="true" dataType="uint16" start="22" />
+	<!--校验码,exists:true/false,是否存在;start:在消息头的起始位置;algorithm:xor(1字节)/crc16(2字节);begin:计算起始位置;-->
+	<checkCode exists="true" start="-3" algorithm="crc16" begin="0" />
+	<!--字节序,little/big-->
+	<byteOrder>big</byteOrder>
+</rule>
+
+<rule>
+	<!--存在时十六进制字符,逗号分隔为空，如：0x23,0x23;不存在是为空-->
+	<head>0x23,0x23</head>
+	<!--存在时十六进制字符,逗号分隔为空;不存在是为空-->
+	<tail>0x55</tail>
+	<!--转义规则-->
+	<escapeChar>
+		<!--src:原,dest:目标,十六进制字符,多个字符是用逗号分隔-->
+		<item src="0x23" dest="0x23,0x01" />
+		<item src="0x24" dest="0x23,0x02" />
+	</escapeChar>
+	<!--包体长度字段,exists:true/false,是否存在;datatype:byte/uint16;start:起始位置-->
+	<bodySize exists="true" dataType="uint16" start="24" />
+	<!--校验码,exists:true/false,是否存在;start:在消息头的起始位置;algorithm:xor(1字节)/crc16(2字节);begin:计算起始位置;-->
+	<checkCode exists="true" start="26" algorithm="crc16" begin="0" end="-2" />
+	<!--字节序,little/big-->
+	<byteOrder>big</byteOrder>
+</rule>

@@ -1,0 +1,39 @@
+<bodies>
+  <!--1011表示0x1011-->
+  <body messageType="1011">
+    <field>
+      <name>f1</name>
+      <dataType>uint16</dataType>
+      <bytesCount>2</bytesCount>
+    </field>
+    <field>
+      <name>f2</name>
+      <dataType>byte</dataType>
+      <bytesCount>1</bytesCount>
+    </field>
+  </body>
+  <body messageType="1012">
+    <field>
+      <name>f1012</name>
+      <dataType>string</dataType>
+      <bytesCount>20</bytesCount>
+    </field>
+    <field>
+      <name>f1012_2</name>
+      <dataType>uint16</dataType>
+      <bytesCount>2</bytesCount>
+    </field>
+  </body>
+  <body messageType="0801">
+    <field>
+      <name>f0801</name>
+      <dataType>string</dataType>
+      <bytesCount>30</bytesCount>
+    </field>
+    <field>
+      <name>f0801_2</name>
+      <dataType>uint16</dataType>
+      <bytesCount>2</bytesCount>
+    </field>
+  </body>
+</bodies>

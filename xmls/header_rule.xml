@@ -1,0 +1,27 @@
+<!--消息头，消息头各字段的长度要固定-->
+<header>
+  <!--name:字段名-->
+  <!--dataType:数据类型;值域：byte/int16/uint16/int32/uint32/int64/uint64/float32/float64/bcd/string/bytes-->
+  <!--bytesCount:字节数；dataType为bcd/string/bytes时有意义；最后字段可以不设置bytesCount，或设置为0；设置为-1时表示相邻上一字段的值-->
+  <!--必须包含name为messageType的字段，dataType为byte或uint16-->
+  <field>
+    <name>phone</name>
+    <dataType>string</dataType>
+    <bytesCount>18</bytesCount>
+  </field>
+  <field>
+    <name>messageType</name>
+    <dataType>uint16</dataType>
+    <bytesCount>2</bytesCount>
+  </field>
+  <field>
+    <name>bodySize</name>
+    <dataType>uint16</dataType>
+    <bytesCount>2</bytesCount>
+  </field>
+  <field>
+    <name>firmware</name>
+    <dataType>string</dataType>
+    <bytesCount>16</bytesCount>
+  </field>
+</header>
